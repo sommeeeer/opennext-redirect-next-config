@@ -6,10 +6,15 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "next": "15.4.5",
+    "@opennextjs/cloudflare": "^1.6.3",
+    "next": "15.3.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sst": "3.17.10"
@@ -23,6 +28,13 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.27.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@opennextjs/aws": "file:/home/lillemagga/Koding/git/opennextjs-aws/packages/open-next",
+      "esbuild": "latest"
+    }
   }
 }

@@ -4,13 +4,16 @@
 export default $config({
   app(input) {
     return {
-      name: "opennext-redirect-next-config",
-      removal: input?.stage === "production" ? "retain" : "remove",
-      protect: ["production"].includes(input?.stage),
-      home: "aws",
+      name: 'opennext-redirect-next-config',
+      removal: input?.stage === 'production' ? 'retain' : 'remove',
+      protect: ['production'].includes(input?.stage),
+      home: 'aws',
     };
   },
   async run() {
-    new sst.aws.Nextjs("MyWeb");
+    new sst.aws.Nextjs('MyWeb', {
+      buildCommand:
+        'node /home/lillemagga/Koding/git/opennextjs-aws/packages/open-next/dist/index.js build',
+    });
   },
 });
