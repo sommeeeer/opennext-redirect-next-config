@@ -30,11 +30,5 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.27.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@opennextjs/aws": "file:/home/lillemagga/Koding/git/opennextjs-aws/packages/open-next",
-      "esbuild": "latest"
-    }
   }
 }
